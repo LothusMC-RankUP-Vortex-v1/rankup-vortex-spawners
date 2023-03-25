@@ -1,0 +1,75 @@
+Database:
+  IP: 127.0.0.1:3306
+  Database: rankup
+  User: root
+  Password: ""
+
+spawnershop:
+  1:
+    entity: COW
+    price: 1000
+    time: "11/01/2022-12:00"
+
+Hologram:
+  hologram-height: 3
+  status:
+    - "&eGerando drop"
+    - "Gerador desativado"
+  line:
+    - "&cSPAWNER"
+    - "&c{type}"
+    - ""
+    - "{amount}"
+    - "{status}"
+    - "{bar}"
+
+spawners-rewards:
+  1:
+    friendly-name: '1.000 de Cash'
+    chance: 1.5
+    command: 'cheques give <player> cash 1000'
+
+drops:
+  vaca:
+    price: 10.0
+    indentifier: 'COW'
+
+bonus:
+  mvpplus:
+    friendly-name: '§6MVP§e+'
+    permission: 'valhalla.drops.bonus.mvpplus'
+    bonus-value: 25
+
+upgrades:
+  capacity:
+    0:
+      indentifier: 0
+      price: 0 #coins
+      value: 100000 #geradores
+    1:
+      indentifier: 1
+      price: 500 #coins
+      value: 1000000000 #geradores
+  xp:
+    0:
+      indentifier: 0
+      price: 0 #coins
+      value: 1 #multiplier of xp
+    1:
+      indentifier: 1
+      price: 5000 #coins
+      value: 3 #multiplier of xp
+
+  times:
+    0:
+      indentifier: 0
+      price: 0 #coins
+      value: 30 #segundos
+    1:
+      indentifier: 1
+      price: 500 #coins
+      value: 15 #segundos
+    2:
+      indentifier: 2
+      price: 5000 #coins
+      value: 5 #segundos

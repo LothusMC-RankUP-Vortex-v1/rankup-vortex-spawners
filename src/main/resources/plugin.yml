@@ -1,0 +1,9 @@
+name: VortexSpawners
+version: 1.0
+main: br.net.rankup.spawners.SpawnerPlugin
+load: POSTWORLD
+authors: [zRomaGod_]
+depend:
+  - HolographicDisplays
+  - Multiverse-Core
+  - PlotSquared

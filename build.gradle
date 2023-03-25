@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "io.freefair.lombok" version "6.4.3"
+}
+
+group = 'br.net.rankup'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'elmakers-repo'
+        url = 'https://maven.elmakers.com/repository/'
+    }
+    maven { url "https://repo.codemc.io/repository/maven-public/" }
+    maven { url 'https://jitpack.io/' }
+}
+
+dependencies {
+    implementation (
+            'org.jetbrains:annotations:20.1.0',
+            'com.github.SaiintBrisson.command-framework:bukkit:1.2.0',
+            'io.github.rysefoxx.inventory:RyseInventory-Plugin:1.5.4',
+            'org.mariadb.jdbc:mariadb-java-client:3.0.4',
+            'com.github.PlaceholderAPI:PlaceholderAPI:2.10.9',
+            'com.zaxxer:HikariCP:4.0.3'
+    )
+    compileOnly (
+            'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+    )
+
+    compileOnly fileTree('libs')
+}
+
+shadowJar {
+    archiveName("${project.name}-${project.version}.jar")
+
+    relocate 'me.saiintbrisson.minecraft', 'br.net.rankup.spawners.libs.saiintbrisson.minecraft'
+    relocate 'me.saiintbrisson.bukkit.command', 'br.net.rankup.spawners.libs.saiintbrisson.bukkit'
+}
+
+compileJava {
+    options.encoding('UTF-8')
+    sourceCompatibility('1.8')
+    targetCompatibility('1.8')
+}
+
+tasks.withType(Jar) {
+    destinationDirectory.set(file('C:/Users/estev/OneDrive/Área de Trabalho/RankUP/plugins'))
+}
